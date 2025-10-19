@@ -31,3 +31,10 @@ EXPOSE 80
 
 # Start Apache
 CMD ["apache2-foreground"]
+
+# Copy entrypoint script
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+# Run the entrypoint
+ENTRYPOINT ["entrypoint.sh"]
